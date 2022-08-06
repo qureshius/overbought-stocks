@@ -1,4 +1,6 @@
-FROM haakco/stage3-ubuntu-20.04-php7.4-lv
+#FROM haakco/stage3-ubuntu-20.04-php7.4-lv
+
+FROM haakco/deploying-laravel-app-ubuntu-20.04-php7.4-lv-wave
 
 USER www-data
 

@@ -12,6 +12,7 @@ class ScrapperController extends Controller
 {
   public function scrapper()
   {
+    Product::truncate();
     $response = Http::post('https://ws.finscreener.org:8443/overstocks/get', [
       "typTabulky" => "OverBought",
       "strankovanie" => ["cisloStranky" => 1, "pocetZaznamovNaStranku" => 100],
@@ -37,5 +38,6 @@ class ScrapperController extends Controller
       }
       DB::table('products')->insert($products);
     }
+    print('data has been successfully imported');
   }
 }
